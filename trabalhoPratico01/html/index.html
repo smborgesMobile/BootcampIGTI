@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<lang ="eng">
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+      <table>
+        <tr>
+          <th>(R) Vermelho:</th>
+          <th><input id="redBar" type="range" min="0" max="255"/></th>
+          <th><input id="redText" type="text" disabled /></th>
+        </tr>
+
+        <tr>
+          <th>(G) Verde:</th>
+          <th><input id="greenBar" type="range" min="0" max="255"/></th>
+          <th><input id="greenText" type="text" disabled /></th>
+        </tr>
+        <tr>
+          <th>(B) Azul:</th>
+          <th><input id="blueBar" type="range" min="0" max="255"/></th>
+          <th><input id="blueText" type="text" disabled /></th>
+        </tr>
+
+        <tr>
+            <th></th>
+            <th><div id="divColors"></div></th>
+        </tr>
+      </table>
+    </body>
+
+    <script src="../js/chalanger.js"></script>
+  </html>
+</lang>

@@ -1,0 +1,13 @@
+th {
+  text-align: left;
+}
+
+input {
+    text-align: center;
+}
+
+#divColors {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
