@@ -69,3 +69,5 @@ console.log(`Template Literals: ${fullNameTemplateLiterals}`);
 const sum5 = (a = 2, b = 4) => a + b;
 console.log(`sum default value ${sum5(3)}`)
 
+
+

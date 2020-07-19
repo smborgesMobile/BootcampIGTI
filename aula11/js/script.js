@@ -10,6 +10,9 @@ window.addEventListener("load", () => {
   doSome();
   doEvery();
   doSort();
+  doSpread();
+  doRest()
+  doDestruction();
 });
 
 function doMap() {
@@ -85,9 +88,47 @@ function doSort() {
     })
     .filter((person) => {
       return person.name.startsWith("A");
-    }).sort((a, b) =>{
-       return a.name.length - b.name.length;
+    })
+    .sort((a, b) => {
+      return a.name.length - b.name.length;
     });
 
   console.log(mappedNames);
+}
+
+/**
+ * Espalhou os dois vetores e juntou em um só
+ */
+function doSpread() {
+  const marriedMan = people.results.filter(
+    (person) => person.name.title === "Mr"
+  );
+  const marriedWoman = people.results.filter(
+    (person) => person.name.title === "Ms"
+  );
+
+  const marriedPeople = [...marriedWoman, ...marriedMan, { msg: "oi" }];
+
+  console.log(marriedPeople);
+}
+
+function doRest() {
+  console.log(infiniteSum(1, 2, 2, 3, 4, 5));
+}
+
+function infiniteSum(...numbers) {
+  return numbers.reduce((accumulator, curr) => accumulator + curr, 0);
+}
+
+function doDestruction() {
+  const first = people.results[0];
+
+  /// repetitivo
+
+
+
+  const {username, password} = first.login;
+
+  console.log(username);
+  console.log(password);
 }
