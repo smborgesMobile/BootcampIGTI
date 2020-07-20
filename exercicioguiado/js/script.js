@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
 });
 
 async function fetchCounties() {
-  const promisse = await fetch(" https://restcountries.eu/rest/v2/all");
+  const promisse = await fetch("https://restcountries.eu/rest/v2/all");
   const json = await promisse.json();
   //Retornando apenas os items que eu quero do vetor.
   allCountries = json.map((country) => {

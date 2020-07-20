@@ -1,0 +1,51 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#filteredItens {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    margin-top: 50px;
+    width: 25%;
+    font-size: 20px;
+}
+
+#filteredStatics {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 10px;
+    display: flex;
+    vertical-align: top;
+    margin-top: 50px;
+    width: 25%;
+    height: 20%;
+    font-size: 20px;
+}
+
+#contentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#searchContent {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.validate {
+    width: 250px;
+}
