@@ -42,7 +42,7 @@ async function fechData() {
     const { name, picture, dob, gender } = person;
     return {
       name: name.first + " " + name.last,
-      picture: picture.thumbnail,
+      picture: picture.large,
       dob: dob.age,
       gender: gender,
     };
@@ -107,30 +107,64 @@ function getSumOfAges(filteredList) {
 
 function fillAllList(filteredList) {
   let countriesHTML = null;
-
-  if (filteredList.length > 0) {
-    countriesHTML = "<div> <b>Usuários Encontrados: </b>" + filteredList.length;
-  } else {
-    countriesHTML = "<div>";
-  }
+  countriesHTML = "<div>";
 
   filteredList.forEach((person) => {
     const { name, picture, dob, gender } = person;
 
     //Item da lista
     var countryHTML = `
-      <div class="peopleContent">
-        <div>
-        <img src="${picture}" alt="${name}">
-        </div>
-        <div>
-        <ul>
-        <li>${"<b>Nome: </b>" + name}</li>
-        <li>${"<b>Idade: </b>" + dob}</li>
-        <li>${"<b>Sexo: </b>" + gender}</li>
-        </ul>
-        </div>
+    <!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
+
+    <aside class="profile-card">
+      <div class="mask-shadow"></div>
+      <header>
+    
+        <a href="https://tutsplus.com">
+          <img src="${person.picture}">
+        </a>
+    
+        <h1>${person.name}</h1>
+      </header>
+    
+      <!-- bit of a bio; who are you? -->
+      <div class="profile-bio">
+      <ul>
+       <li>${"<b>Genero: </b>" + person.gender}</li>
+       <li>${"<b>Idade: </b>" + person.dob}</li>
+      </ul>
       </div>
+    
+      <!-- some social links to show off -->
+      <ul class="profile-social-links">
+    
+        <!-- twitter - el clásico  -->
+        <li>
+          <a href="https://twitter.com/tutsplus">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-twitter.svg">
+          </a>
+        </li>
+    
+        <!-- envato – use this one to link to your marketplace profile -->
+        <li>
+          <a href="https://envato.com">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-envato.svg">
+          </a>
+        </li>
+    
+        <!-- codepen - your codepen profile-->
+        <li>
+          <a href="https://codepen.io/tutsplus">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-codepen.svg">
+          </a>
+        </li>
+    
+        <!-- add or remove social profiles as you see fit -->
+    
+      </ul>
+    
+    </aside>
+    <!-- that’s all folks! -->
     `;
 
     countriesHTML += countryHTML;
