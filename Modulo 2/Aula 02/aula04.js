@@ -1,18 +1,45 @@
 import { promises as fs } from "fs";
 
+let globalCarros = [];
+
 function start() {
-    writeAsync()
+  writeAndReadJson();
+}
+
+async function writeAndReadJson() {
+  try {
+    const arrayCarros = ["Gol", "Palio", "Uno", "Fusca", "Mercedes", "BMW"];
+
+    const carObject = {
+      carros: arrayCarros,
+    };
+
+    console.log(carObject);
+
+    await fs.writeFile("teste-carros.json", JSON.stringify(carObject));
+
+    const readedValue = JSON.parse(await fs.readFile("teste-carros.json"));
+
+    readedValue.carros.push("Kwid");
+    
+    await fs.writeFile("teste-carros.json", JSON.stringify(readedValue));
+
+    console.log(globalCarros);
+    console.log(readedValue);
+  } catch (exception) {
+    console.log(exception);
+  }
 }
 
 async function writeAsync() {
-    try {
-        await fs.writeFile("teste05.txt", "blablabla");
-        await fs.appendFile("teste05.txt", "Valor apendado com async");
-        const data = await fs.readFile("teste05.txt", "utf-8");
-        console.log(data);
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+    await fs.writeFile("teste05.txt", "blablabla");
+    await fs.appendFile("teste05.txt", "Valor apendado com async");
+    const data = await fs.readFile("teste05.txt", "utf-8");
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function writeFileWithPromises() {
