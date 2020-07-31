@@ -8,7 +8,7 @@ let minStateFromBrasil = "";
 
 function start() {
   retrieveStateAndCities();
-  //getCitiesFromState();
+  getCitiesFromState();
   getMajorMinCitiesFromBrasil();
 }
 
