@@ -13,8 +13,7 @@ function start() {
 function question() {
   rl.question("Digite um número: ", (numero) => {
     console.log(numero);
-    
-  question();
+    question();
   });
 }
 
