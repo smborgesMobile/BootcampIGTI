@@ -12,7 +12,7 @@ function start() {
   getMajorMinCitiesFromBrasil();
 }
 
-async function retrieveStateAndCities() {
+async function retrieveStateAndCities() {                             
   const states = JSON.parse(await fs.readFile("json/estados.json"));
   const cities = JSON.parse(await fs.readFile("json/cidades.json"));
 
@@ -66,15 +66,25 @@ async function getMajorMinCitiesFromBrasil() {
   }
 
   var majorState = states.filter((state) => {
-    return state.ID === majorCitieID
-  })
+    return state.ID === majorCitieID;
+  });
 
   var minorState = states.filter((state) => {
-    return state.ID === minorCitieID
-  })
+    return state.ID === minorCitieID;
+  });
 
-  console.log("Maior cidade é: " + majorCitie + " E está no estado do: " + majorState[0].Nome);
-  console.log("Menor cidade é: " + minorCitie + " E está no estado do: " + minorState[0].Nome);
+  console.log(
+    "Maior cidade é: " +
+      majorCitie +
+      " E está no estado do: " +
+      majorState[0].Nome
+  );
+  console.log(
+    "Menor cidade é: " +
+      minorCitie +
+      " E está no estado do: " +
+      minorState[0].Nome
+  );
 }
 
 async function getCitiesFromState() {
