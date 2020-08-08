@@ -1,10 +1,18 @@
 import express from "express";
+import carrosRouter from "./carrosRouter.js"
 
 //Criando uma nova instancia do express.
 const app = express();
 
 // Avisa o express que queremos que usar um json.
 app.use(express.json());
+app.use((req, resp, next) => {
+  console.log(new Date());
+  next();
+});
+
+//tudo que chega em /carros mandar para o router.
+app.use("/carros", carrosRouter)
 
 // Declara uma rota para a raiz da nossa aplicação.
 // Arrow function com parametros (request, response)
