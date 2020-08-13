@@ -41,7 +41,7 @@ router.post("/", async (req, res, next) => {
 });
 
 // 2 - Criar um novo end point para atualizar os dados de um student
-router.patch("/:id", async (req, res, next) => {
+router.patch("/", async (req, res, next) => {
   try {
     let gradle = req.body;
 
