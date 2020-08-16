@@ -6,8 +6,4 @@ Saindo um pouco da zona de conforto e experimentando desenvolvimento web fullsta
 
 <h2> Trabalho prático JS Moderno </h2>
 ![Alt text](thumb.png "Optional title")
-![Test Image 1](thumb.png)
-
-<h2> Trabalho prático react </h2>
-![Alt text](pratico_thumb.png "Trabalho pratico")
 
