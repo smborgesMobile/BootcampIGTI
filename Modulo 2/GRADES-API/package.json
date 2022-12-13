@@ -12,7 +12,7 @@
   "dependencies": {
     "chokidar": "^3.4.2",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "moment": "^2.27.0"
   }
 }
